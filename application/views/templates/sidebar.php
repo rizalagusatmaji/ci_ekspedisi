@@ -44,7 +44,8 @@
         </li>
 
     <?php
-    } else {
+    }
+    if ($user['role_id'] == 2) {
     ?>
         <!-- Divider -->
         <hr class="sidebar-divider">

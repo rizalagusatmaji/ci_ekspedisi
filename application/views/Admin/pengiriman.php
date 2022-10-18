@@ -31,25 +31,52 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>$320,800</td>
+                            <td>191020220001</td>
+                            <td>Admin</td>
+                            <td>08212345</td>
+                            <td>Malang</td>
+                            <td>19-10-2022</td>
+                            <td>Menuju ke gudang</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                                    <span class="text">Ubah</span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                                    <span class="text">Hapus</span>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>$170,750</td>
+                            <td>191020220002</td>
+                            <td>Admin</td>
+                            <td>08212345</td>
+                            <td>Surabaya</td>
+                            <td>19-10-2022</td>
+                            <td>Transit</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                                    <span class="text">Ubah</span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                                    <span class="text">Hapus</span>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>$86,000</td>
+                            <td>191020220003</td>
+                            <td>Admin</td>
+                            <td>08212345</td>
+                            <td>Jakarta</td>
+                            <td>19-10-2022</td>
+                            <td>Tempat penyortiran</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                                    <span class="text">Ubah</span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                                    <span class="text">Hapus</span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

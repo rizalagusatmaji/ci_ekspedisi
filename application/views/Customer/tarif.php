@@ -14,28 +14,24 @@
                         <tr>
                             <th>Kota Awal</th>
                             <th>Kota Tujuan</th>
-                            <th>Berat</th>
                             <th>Harga</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
+                            <td>Malang</td>
+                            <td>Jakarta</td>
+                            <td>Rp 22.000</td>
                         </tr>
                         <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
+                            <td>Malang</td>
+                            <td>Surabaya</td>
+                            <td>Rp 7.000</td>
                         </tr>
                         <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
+                            <td>Jakarta</td>
+                            <td>Surabaya</td>
+                            <td>Rp 27.000</td>
                         </tr>
                     </tbody>
                 </table>
