@@ -8,32 +8,32 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div>
+                <form action="" method="post">
+                    <div class="w-25 mb-2 d-flex">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search keyword.." aria-controls="dataTable" name="keyword" autocomplete="off">
+                        <button type="submit" class="btn btn-primary btn-sm">Cari</button>
+                    </div>
+                </form>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Kota Awal</th>
                             <th>Kota Tujuan</th>
                             <th>Harga</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Malang</td>
-                            <td>Jakarta</td>
-                            <td>Rp 22.000</td>
-                        </tr>
-                        <tr>
-                            <td>Malang</td>
-                            <td>Surabaya</td>
-                            <td>Rp 7.000</td>
-                        </tr>
-                        <tr>
-                            <td>Jakarta</td>
-                            <td>Surabaya</td>
-                            <td>Rp 27.000</td>
-                        </tr>
-                    </tbody>
+                    <?php $no = 1;
+                    foreach ($tarif as $tr) : ?>
+                        <tbody>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $tr->kota_awal; ?></td>
+                                <td><?= $tr->kota_tujuan; ?></td>
+                                <td>Rp.<?= $tr->biaya; ?></td>
+                            </tr>
+                        </tbody>
+                    <?php endforeach ?>
                 </table>
             </div>
         </div>

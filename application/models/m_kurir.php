@@ -19,4 +19,13 @@ class M_kurir extends CI_Model
         );
         return $this->db->where('id', $this->input->post('id'))->update('pengiriman', $ubah);
     }
+
+    public function cariDataPengiriman()
+    {
+
+        $keyword = $this->input->post('keyword', true);
+        $this->db->like('resi', $keyword);
+        $this->db->or_like('nama_pengirim', $keyword);
+        return $this->db->get('pengiriman')->result();
+    }
 }

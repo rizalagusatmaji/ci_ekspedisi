@@ -8,7 +8,12 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div>
+                <form action="" method="post">
+                    <div class="w-25 mb-2 d-flex">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search keyword.." aria-controls="dataTable" name="keyword" autocomplete="off">
+                        <button type="submit" class="btn btn-primary btn-sm">Cari</button>
+                    </div>
+                </form>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>

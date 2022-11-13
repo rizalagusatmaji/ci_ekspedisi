@@ -123,4 +123,31 @@ class M_admin extends CI_Model
     {
         return $this->db->where('id', $id)->delete('tarif');
     }
+
+    public function cariDataKurir()
+    {
+        $this->db->where("role_id", "2");
+        $this->db->join('user_role', 'user_role.id=user.role_id');
+        $keyword = $this->input->post('keyword', true);
+        $this->db->like('name', $keyword);
+        $this->db->or_like('username', $keyword);
+        return $this->db->get('user')->result();
+    }
+
+    public function cariDataPengiriman()
+    {
+
+        $keyword = $this->input->post('keyword', true);
+        $this->db->like('resi', $keyword);
+        $this->db->or_like('nama_pengirim', $keyword);
+        return $this->db->get('pengiriman')->result();
+    }
+
+    public function cariDataTarif()
+    {
+        $keyword = $this->input->post('keyword', true);
+        $this->db->like('kota_awal', $keyword);
+        $this->db->or_like('kota_tujuan', $keyword);
+        return $this->db->get('tarif')->result();
+    }
 }

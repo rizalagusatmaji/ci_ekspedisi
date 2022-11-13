@@ -26,6 +26,9 @@ class Kurir extends CI_Controller
         $data['title'] = 'Kurir Page';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['pengiriman'] = $this->m_kurir->get_data_pengiriman();
+        if ($this->input->post('keyword')) {
+            $data['pengiriman'] = $this->m_kurir->cariDataPengiriman();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

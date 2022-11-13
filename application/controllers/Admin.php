@@ -14,6 +14,9 @@ class Admin extends CI_Controller
         $data['title'] = 'Admin Page';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['kurir'] = $this->m_admin->get_data_kurir();
+        if ($this->input->post('keyword')) {
+            $data['kurir'] = $this->m_admin->cariDataKurir();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -26,6 +29,9 @@ class Admin extends CI_Controller
         $data['title'] = 'Admin Page';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['pengiriman'] = $this->m_admin->get_data_pengiriman();
+        if ($this->input->post('keyword')) {
+            $data['pengiriman'] = $this->m_admin->cariDataPengiriman();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -38,6 +44,9 @@ class Admin extends CI_Controller
         $data['title'] = 'Admin Page';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['tarif'] = $this->m_admin->get_data_tarif();
+        if ($this->input->post('keyword')) {
+            $data['tarif'] = $this->m_admin->cariDataTarif();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

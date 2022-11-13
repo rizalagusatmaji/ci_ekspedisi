@@ -12,7 +12,9 @@ class Customer extends CI_Controller
     public function index()
     {
         $data['title'] = 'Customer Page';
-        $data['pengiriman'] = $this->m_admin->get_data_pengiriman();
+        if ($this->input->post('keyword')) {
+            $data['pengiriman'] = $this->m_admin->cariDataPengiriman();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar_customer', $data);
         $this->load->view('templates/topbar_customer', $data);
@@ -23,7 +25,9 @@ class Customer extends CI_Controller
     public function resi()
     {
         $data['title'] = 'Customer Page';
-        $data['pengiriman'] = $this->m_admin->get_data_pengiriman();
+        if ($this->input->post('keyword')) {
+            $data['pengiriman'] = $this->m_admin->cariDataPengiriman();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar_customer', $data);
         $this->load->view('templates/topbar_customer', $data);
@@ -35,6 +39,9 @@ class Customer extends CI_Controller
     {
         $data['title'] = 'Customer Page';
         $data['tarif'] = $this->m_admin->get_data_tarif();
+        if ($this->input->post('keyword')) {
+            $data['pengiriman'] = $this->m_admin->cariDataTarif();
+        }
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar_customer', $data);
         $this->load->view('templates/topbar_customer', $data);
