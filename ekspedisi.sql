@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2022 at 10:48 PM
+-- Generation Time: Nov 13, 2022 at 01:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,52 @@ SET time_zone = "+00:00";
 --
 -- Database: `ekspedisi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengiriman`
+--
+
+CREATE TABLE `pengiriman` (
+  `id` int(11) NOT NULL,
+  `resi` varchar(256) NOT NULL,
+  `nama_pengirim` varchar(256) NOT NULL,
+  `no_hp` varchar(15) NOT NULL,
+  `alamat_asal` varchar(256) NOT NULL,
+  `alamat_tujuan` text NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `biaya` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pengiriman`
+--
+
+INSERT INTO `pengiriman` (`id`, `resi`, `nama_pengirim`, `no_hp`, `alamat_asal`, `alamat_tujuan`, `tanggal`, `biaya`, `status`) VALUES
+(1, '1', '1', '1', '1', '1', '2022-10-10 10:00:00', 1, 'Sortir1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tarif`
+--
+
+CREATE TABLE `tarif` (
+  `id` int(11) NOT NULL,
+  `kota_awal` varchar(256) NOT NULL,
+  `kota_tujuan` varchar(256) NOT NULL,
+  `biaya` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tarif`
+--
+
+INSERT INTO `tarif` (`id`, `kota_awal`, `kota_tujuan`, `biaya`) VALUES
+(1, 'Malang', 'Jakarta', 27000),
+(2, 'Malang', 'Surabaya', 7000);
 
 -- --------------------------------------------------------
 
@@ -41,7 +87,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `role_id`) VALUES
 (1, 'admin1', 'admin1', 'admin1', 1),
-(2, 'kurir1', 'kurir1', 'kurir1', 2);
+(3, 'kurir2', 'kurir2', 'kurir2', 2),
+(4, 'kurir1', 'kurir1', 'kurir1', 2);
 
 -- --------------------------------------------------------
 
@@ -67,6 +114,18 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
+-- Indexes for table `pengiriman`
+--
+ALTER TABLE `pengiriman`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tarif`
+--
+ALTER TABLE `tarif`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -84,10 +143,22 @@ ALTER TABLE `user_role`
 --
 
 --
+-- AUTO_INCREMENT for table `pengiriman`
+--
+ALTER TABLE `pengiriman`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tarif`
+--
+ALTER TABLE `tarif`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_role`

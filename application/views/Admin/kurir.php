@@ -39,7 +39,7 @@
                                     <a href="#ubah" data-toggle="modal" onclick="edit(<?= $kr->id ?>)" class="btn btn-warning btn-icon-split btn-sm">
                                         <span class="text">Ubah</span>
                                     </a>
-                                    <a href="<?= base_url('admin/hapus_kurir/' . $kr->id) ?>" onclick="return confirm('apakah anda yakin untuk menghapus?')" class="btn btn-danger btn-icon-split btn-sm">
+                                    <a href="<?= base_url('admin/hapus_kurir/' . $kr->id) ?>" onclick="return confirm('apakah anda yakin untuk menghapus ?')" class="btn btn-danger btn-icon-split btn-sm">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>

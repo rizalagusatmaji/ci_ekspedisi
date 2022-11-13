@@ -71,7 +71,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kurir</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Pengiriman</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -110,7 +110,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Ubah Kurir</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Ubah Pengiriman</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -129,7 +129,7 @@
                     Alamat Tujuan
                     <input type="text" name="alamat_tujuan" id="alamat_tujuan" class="form-control" required autocomplete="off">
                     Tanggal Pengiriman
-                    <input type="text" name="tanggal" id="tanggal" class="form-control" required autocomplete="off" value="<?php echo date('Y-m-d H:i:s'); ?>">
+                    <input type="text" name="tanggal" id="tanggal" class="form-control" required autocomplete="off">
                     Biaya
                     <input type="text" name="biaya" id="biaya" class="form-control" required autocomplete="off">
                     Status

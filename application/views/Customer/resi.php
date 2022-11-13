@@ -12,37 +12,33 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>No Resi</th>
                             <th>Nama Pengirim</th>
                             <th>No HP Pengirim</th>
+                            <th>Alamat Awal</th>
                             <th>Alamat Tujuan</th>
                             <th>Tanggal Pengiriman</th>
+                            <th>Biaya</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>$86,000</td>
-                        </tr>
-                    </tbody>
+                    <?php $no = 1;
+                    foreach ($pengiriman as $pg) : ?>
+                        <tbody>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $pg->resi; ?></td>
+                                <td><?= $pg->nama_pengirim; ?></td>
+                                <td><?= $pg->no_hp; ?></td>
+                                <td><?= $pg->alamat_asal; ?></td>
+                                <td><?= $pg->alamat_tujuan; ?></td>
+                                <td><?= $pg->tanggal; ?></td>
+                                <td>Rp.<?= $pg->biaya; ?></td>
+                                <td><?= $pg->status; ?></td>
+                            </tr>
+                        </tbody>
+                    <?php endforeach ?>
                 </table>
             </div>
         </div>

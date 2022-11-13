@@ -87,4 +87,40 @@ class M_admin extends CI_Model
     {
         return $this->db->where('id', $id)->delete('pengiriman');
     }
+
+    //tarif
+    function get_data_tarif()
+    {
+        return $this->db->get('tarif')->result();
+    }
+
+    public function tambah_tarif()
+    {
+        $tambah = array(
+            'kota_awal' => $this->input->post('kota_awal'),
+            'kota_tujuan' => $this->input->post('kota_tujuan'),
+            'biaya' => $this->input->post('biaya')
+        );
+        return $this->db->insert('tarif', $tambah);
+    }
+
+    public function tampil_tarif($id)
+    {
+        return $this->db->where('id', $id)->get('tarif')->row();
+    }
+
+    public function ubah_tarif()
+    {
+        $ubah = array(
+            'kota_awal' => $this->input->post('kota_awal'),
+            'kota_tujuan' => $this->input->post('kota_tujuan'),
+            'biaya' => $this->input->post('biaya')
+        );
+        return $this->db->where('id', $this->input->post('id'))->update('tarif', $ubah);
+    }
+
+    public function hapus_tarif($id)
+    {
+        return $this->db->where('id', $id)->delete('tarif');
+    }
 }

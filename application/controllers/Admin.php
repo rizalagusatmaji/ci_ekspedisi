@@ -9,17 +9,6 @@ class Admin extends CI_Controller
         $this->load->model('m_admin');
     }
 
-    public function index()
-    {
-        $data['title'] = 'Admin Page';
-        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('admin/kurir', $data);
-        $this->load->view('templates/footer', $data);
-    }
-
     public function kurir()
     {
         $data['title'] = 'Admin Page';
@@ -48,6 +37,7 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Admin Page';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['tarif'] = $this->m_admin->get_data_tarif();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -103,5 +93,30 @@ class Admin extends CI_Controller
     {
         $this->m_admin->hapus_pengiriman($id);
         redirect('admin/pengiriman');
+    }
+
+    //tarif
+    public function tambah_tarif()
+    {
+        $this->m_admin->tambah_tarif();
+        redirect('admin/tarif');
+    }
+
+    public function tampil_tarif($id = '')
+    {
+        $data_tampil = $this->m_admin->tampil_tarif($id);
+        echo json_encode($data_tampil);
+    }
+
+    public function ubah_tarif()
+    {
+        $this->m_admin->ubah_tarif();
+        redirect('admin/tarif');
+    }
+
+    public function hapus_tarif($id)
+    {
+        $this->m_admin->hapus_tarif($id);
+        redirect('admin/tarif');
     }
 }
