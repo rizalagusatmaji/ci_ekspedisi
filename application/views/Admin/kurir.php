@@ -20,29 +20,32 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Username</th>
-                            <th>Role_Id</th>
-                            <th>Action</th>
+                            <th>Role Name</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>kurir1</td>
-                            <td>kurir1</td>
-                            <td>kurir</td>
-                            <td>
-                                <a href="#" class="btn btn-warning btn-icon-split btn-sm">
-                                    <span class="text">Ubah</span>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-icon-split btn-sm">
-                                    <span class="text">Hapus</span>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <?php $no = 1;
+                    foreach ($kurir as $kr) : ?>
+                        <tbody>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $kr->name; ?></td>
+                                <td><?= $kr->username; ?></td>
+                                <td><?= $kr->role; ?></td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                                        <span class="text">Ubah</span>
+                                    </a>
+                                    <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                                        <span class="text">Hapus</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php endforeach ?>
                 </table>
             </div>
         </div>
