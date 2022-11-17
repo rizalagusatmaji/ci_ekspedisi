@@ -136,7 +136,6 @@ class M_admin extends CI_Model
 
     public function cariDataPengiriman()
     {
-
         $keyword = $this->input->post('keyword', true);
         $this->db->where("resi", $keyword);
         //$this->db->like('resi', $keyword);
