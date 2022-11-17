@@ -138,8 +138,9 @@ class M_admin extends CI_Model
     {
 
         $keyword = $this->input->post('keyword', true);
-        $this->db->like('resi', $keyword);
-        $this->db->or_like('nama_pengirim', $keyword);
+        $this->db->where("resi", $keyword);
+        //$this->db->like('resi', $keyword);
+        //$this->db->or_like('nama_pengirim', $keyword);
         return $this->db->get('pengiriman')->result();
     }
 
